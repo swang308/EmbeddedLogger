@@ -1,0 +1,23 @@
+# Compiled binaries
+travel
+server/server
+*.o
+*.obj
+
+# Debug symbols
+*.dSYM/
+
+# Runtime artifacts
+ServerLog.txt
+*.log
+
+# Editor / OS
+.vscode/
+.DS_Store
+
+# Course submission artifacts — keep these out of the repo, even private:
+# the video/report are large and carry your student ID, and the build
+# guide reads like a step-by-step solution walkthrough.
+133159228_*
+Assignment3_Build_Guide.md
+Assignment3_Video_Script.md
