@@ -10,7 +10,7 @@
 //                 the receive thread and the menu thread, so both are guarded
 //                 by a mutex.
 //
-// 06-Aug-26  Shan-Yun Wang (133159228)   Created.
+// Shan-Yun Wang, Aug 2026
 //
 #include <arpa/inet.h>
 #include <errno.h>

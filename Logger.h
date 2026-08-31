@@ -8,7 +8,7 @@
 //            Log messages at or above the current filter severity are sent to
 //            a central log server over UDP. Messages below it are discarded.
 //
-// 06-Aug-26  Shan-Yun Wang (133159228)   Created.
+// Shan-Yun Wang, Aug 2026
 //
 #ifndef LOGGER_H
 #define LOGGER_H
