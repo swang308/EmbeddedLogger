@@ -44,10 +44,31 @@ The server is a second process — designed to run on a separate machine — wit
 - Clean shutdown on `SIGINT`: threads are joined before their sockets are closed, so nothing is left dangling
 - Runtime-adjustable log severity, driven remotely from the server's console menu, with no restart required
 
+## Project layout
+
+```
+EmbeddedLogger/
+├── README.md
+├── .gitignore
+├── client/             # the application process
+│   ├── Makefile
+│   ├── Logger.h        # the logging library
+│   ├── Logger.cpp
+│   ├── Automobile.h    # demo class exercised by the simulator
+│   ├── Automobile.cpp
+│   └── TravelSimulator.cpp   # demo app: calls Log() while "driving" cars
+└── server/             # the log server process
+    ├── Makefile
+    └── LogServer.cpp
+```
+
+`Logger.h`/`Logger.cpp` are the reusable part of the project — a small API any application can call. `Automobile`/`TravelSimulator` are a demo consumer that exercises it under a repeating workload.
+
 ## Build & Run
 
 ```bash
 # Application side
+cd client
 make all
 ./travel
 
@@ -57,7 +78,7 @@ make all
 ./server
 ```
 
-Set `SERVER_IP` / `SERVER_PORT` in `Logger.cpp` to match the server's address before running across two machines.
+Set `SERVER_IP` / `SERVER_PORT` in `client/Logger.cpp` to match the server's address before running across two machines.
 
 ## Tech
 
